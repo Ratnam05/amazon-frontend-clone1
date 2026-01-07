@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amazon Frontend Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">amazon</div>
+
+    <input type="text" id="searchInput" placeholder="Search products" onkeyup="searchProduct()">
+
+    <div class="nav-actions">
+        <button onclick="toggleAuth()">Login</button>
+        <button onclick="toggleDark()">🌙</button>
+        <div class="cart-btn" onclick="toggleCart()">
+            🛒 (<span id="cartCount">0</span>)
+        </div>
+    </div>
+</header>
+
+<!-- PRODUCTS -->
+<section class="products" id="productList"></section>
+
+<!-- PRODUCT DETAILS -->
+<div class="modal" id="productModal"></div>
+
+<!-- CART -->
+<div class="cart-modal" id="cartModal">
+    <h2>Your Cart</h2>
+    <ul id="cartItems"></ul>
+    <h3>Total: ₹<span id="total">0</span></h3>
+    <button onclick="checkout()">Checkout</button>
+    <button onclick="toggleCart()">Close</button>
+</div>
+
+<!-- AUTH -->
+<div class="modal" id="authModal">
+    <h2>Login / Signup</h2>
+    <input placeholder="Email">
+    <input placeholder="Password" type="password">
+    <button onclick="toggleAuth()">Submit</button>
+</div>
+
+<!-- CHECKOUT -->
+<div class="modal" id="checkoutModal">
+    <h2>Checkout</h2>
+    <p>Order placed successfully 🎉</p>
+    <button onclick="closeCheckout()">Close</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
